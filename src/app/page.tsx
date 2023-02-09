@@ -53,7 +53,6 @@ const Home: NextPage = () => {
     const newFlavors = [...flavors];
     newFlavors[flavorIndex].quantity = Number(event.target.value) > 0 ? Number(event.target.value) : 0;
     setFlavors(newFlavors);
-    setCountIsValid(true);
 
     const totalQuantity = flavors.reduce((sum, flavor) => {
       return sum + flavor.quantity;
@@ -61,7 +60,9 @@ const Home: NextPage = () => {
 
     setTotalQuantity(totalQuantity);
 
-    if (totalQuantity !== selectedQuantity) {
+    if (totalQuantity === selectedQuantity) {
+      setCountIsValid(true);
+    } else {
       setCountIsValid(false);
     }
   };
