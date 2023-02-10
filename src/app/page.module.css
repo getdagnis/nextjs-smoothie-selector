@@ -133,8 +133,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  top: 0;
-  right: 0;
+  bottom: 0;
   width: 25vw;
   min-width: 300px;
   margin: 1rem;

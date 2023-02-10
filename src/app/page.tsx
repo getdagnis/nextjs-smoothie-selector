@@ -121,7 +121,9 @@ const Home = () => {
       newUserActions.preferedFlavors[currentFlavor?.name] =
         eventType === 'added'
           ? userActions.preferedFlavors[currentFlavor?.name] + 2
-          : userActions.preferedFlavors[currentFlavor?.name] - 1;
+          : newUserActions.preferedFlavors[currentFlavor?.name]
+          ? userActions.preferedFlavors[currentFlavor?.name] - 1
+          : newUserActions.preferedFlavors[currentFlavor?.name];
     }
 
     const sumValues =
@@ -303,11 +305,11 @@ const Home = () => {
             <p>{`${userActions.totalAffinity}: ${
               userActions.totalAffinity < 1
                 ? 'None'
-                : userActions.totalAffinity < 5
-                ? 'Low'
                 : userActions.totalAffinity < 15
+                ? 'Low'
+                : userActions.totalAffinity < 50
                 ? 'Medium'
-                : userActions.totalAffinity < 40
+                : userActions.totalAffinity < 200
                 ? 'High'
                 : 'Extremely High'
             }`}</p>
@@ -316,11 +318,11 @@ const Home = () => {
               style={{
                 width: `${userActions.totalAffinity * 5}px`,
                 background: `${
-                  userActions.totalAffinity < 5
+                  userActions.totalAffinity < 15
                     ? 'gray'
-                    : userActions.totalAffinity < 15
+                    : userActions.totalAffinity < 50
                     ? 'gold'
-                    : userActions.totalAffinity < 40
+                    : userActions.totalAffinity < 200
                     ? 'orange'
                     : 'crimson'
                 }`,
@@ -332,8 +334,8 @@ const Home = () => {
           <div className={styles.actions}>
             <h4>All actions:</h4>
             <ul>
-              {userActions.allActions.map((action, index) => (
-                <li key={index}>{action}</li>
+              {[...userActions.allActions].reverse().map((action, index) => (
+                <li key={index}>{action.split('').length > 80 ? <strong>{action}</strong> : action}</li>
               ))}
             </ul>
           </div>
