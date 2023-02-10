@@ -86,3 +86,72 @@
 .main select:focus {
   border-color: #22262a;
 }
+
+.userAffinity {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  right: 0;
+  width: 25vw;
+  min-width: 300px;
+  height: 50vh;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  color: #22262a;
+}
+
+.userAffinity .actions {
+  overflow-y: scroll;
+}
+
+.userAffinity li {
+  list-style: none;
+}
+
+.userAffinity h4 {
+  margin-top: 0.5rem;
+}
+
+.affinity {
+  margin: 0.5rem 0;
+}
+
+.affinityBar {
+  height: 0.5rem;
+  width: 3rem;
+  background-color: forestgreen;
+  transition: width 0.5s ease-in-out 0.5s;
+  max-width: 90%;
+}
+
+.specialOffer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  width: 25vw;
+  min-width: 300px;
+  margin: 1rem;
+  padding: 1rem;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  background-color: darkgreen;
+}
+
+.specialOffer h3 {
+  margin-top: 0;
+}
+
+.specialOffer h4 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  /* color: forestgreen; */
+}
