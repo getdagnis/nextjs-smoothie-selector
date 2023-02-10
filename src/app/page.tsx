@@ -69,7 +69,27 @@ const Home: NextPage = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
 
+    const body = {
+      'Subscription quantity': selectedQuantity,
+      Flavors: flavors,
+    };
+
+    const options = {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
+    };
+
+    fetch('https://eot73zbjloaxvds.m.pipedream.net', options)
+      .then((response) => {
+        console.log('Successful request: ', response);
+      })
+      .catch((error) => {
+        console.error('Request failed: ', error);
+      });
     alert(`Your ${selectedQuantity} selected smoothies are on their way!`);
   };
 
