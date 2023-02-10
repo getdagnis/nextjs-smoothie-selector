@@ -54,6 +54,7 @@ const Home: NextPage = () => {
     setSelectedQuantity(INITIAL_QUANTITY);
     handleQuantityChange({ target: { value: String(INITIAL_QUANTITY) } } as React.ChangeEvent<HTMLSelectElement>);
     setUserActions(mockUserActions);
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
