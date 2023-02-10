@@ -34,7 +34,7 @@ const fetchedFlavors: Flavor[] = [
 
 const INITIAL_QUANTITY = 30;
 
-const Home: NextPage = () => {
+const Home = () => {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(INITIAL_QUANTITY);
   const [totalQuantity, setTotalQuantity] = useState<number>(INITIAL_QUANTITY);
   const [flavors, setFlavors] = useState(fetchedFlavors);
