@@ -54,12 +54,7 @@ const Home = () => {
     setSelectedQuantity(INITIAL_QUANTITY);
     handleQuantityChange({ target: { value: String(INITIAL_QUANTITY) } } as React.ChangeEvent<HTMLSelectElement>);
     setUserActions(mockUserActions);
-    //eslint-disable-next-line
   }, []);
-
-  useEffect(() => {
-    console.log(userActions);
-  });
 
   const handleQuantityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newSelectedQuantity = Number(event.target.value);
